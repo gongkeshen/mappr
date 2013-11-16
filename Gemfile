@@ -32,6 +32,12 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'simple_form'
+
+gem 'country_select'
+
+gem 'twitter-bootstrap-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
