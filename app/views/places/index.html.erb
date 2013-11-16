@@ -9,6 +9,30 @@
 		<br/>
 		Address:  <%= @place.address %>
 
+<!-- got the following by surfing the web and looking at their page source -->
+ <script src="//maps.google.com/maps?file=api&amp;v=2&amp;key=AIzaSyD4iE2xVSpkLLOXoyqT-RuPwURN3ddScAI"
+            type="text/javascript"></script>
+
+<script type="text/javascript">
+    $(function() {
+   
+    	$( window).unload(function() {
+    		GUnload();
+    	});
+
+
+      if (GBrowserIsCompatible()) {
+        var map = new GMap2(document.getElementById("map_canvas"));
+        map.setCenter(new GLatLng(37.4419, -122.1419), 13);
+ 		var point = new GLatLng(37.4419, -122.1419);
+        // add a marker to the location given
+        map.addOverlay(new GMarker(point));
+      }
+   });
+    </script>
+ 
+ 	<div id="map_canvas" style="width: 500px; height: 300px"></div>
+
 	<% else %>
 		<h2> Enter a Place, because we don't have any. </h2>
 	<% end %>
